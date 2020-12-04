@@ -3,7 +3,10 @@ import { ErrorRequestHandler, NextFunction, Request, Response } from "express";
 import express from "express";
 import cors from "cors";
 
-import user from "./routes/user";
+import calorieDatapoint from "./routes/calorieDatapoint";
+import financialDatapoint from "./routes/financialDatapoint";
+import datapointType from "./routes/financialDatapointType";
+
 
 /**
  * Express Error handler, used to give more detailed errors to the end user.
@@ -71,7 +74,10 @@ export const startServer = (port?: number): void => {
 
     app.use(express.json());
 
-    app.use("/user", user);
+    app.use("/calorieDatapoint", calorieDatapoint);
+    app.use("/financialDatapoint", financialDatapoint);
+    app.use("/datapointType", datapointType);
+
 
     port = port || 3000;
 

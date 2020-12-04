@@ -10,8 +10,12 @@ import { User } from "./User";
 
 @Entity()
 export class FinancialDatapoint extends BaseEntity {
-    constructor() {
+    constructor(title: string, price: number, type: FinancialDatapointType, owner: User) {
         super();
+        this.title = title;
+        this.price = price;
+        this.type = type;
+        this.owner = owner;
     }
 
     @PrimaryGeneratedColumn("uuid")

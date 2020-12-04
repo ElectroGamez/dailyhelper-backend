@@ -9,8 +9,9 @@ import { FinancialDatapoint } from "./FinancialDatapoint";
 
 @Entity()
 export class FinancialDatapointType extends BaseEntity {
-    constructor() {
+    constructor(title: string) {
         super();
+        this.title = title;
     }
 
     @PrimaryGeneratedColumn("uuid")

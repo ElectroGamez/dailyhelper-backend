@@ -9,8 +9,11 @@ import { User } from "./User";
 
 @Entity()
 export class CalorieDatapoint extends BaseEntity {
-    constructor() {
+    constructor(title: string, calories: number, owner: User) {
         super();
+        this.title = title;
+        this.calories = calories;
+        this.owner = owner;
     }
 
     @PrimaryGeneratedColumn("uuid")
